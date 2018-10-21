@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+{% block title %}SCT UNFV{% endblock %}
+{% block body %}
+<header>
+    <nav style="background:#D55313; border-color:#0B0B3B" class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+          <left><img src="{{ asset('assets/images/logo.svg') }}" class="img-responsive"  style="width:50%; padding:5px;" alt="logoSCT" />  </left>
+
+          <!-- <a style=" font: message-box; font-size:18px; margin-top:5px"class="navbar-brand" href="#"> Historial Académico UNFV </a>-->
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a  style=" font-size:14px; font: message-box"><i class="btn icon-user" style="font-size:1.1em; color:white" ></i> Bienvenido: Rosmery Isabel Luna Tito | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Estudiante</a></li>
+          	<li title="Cerrar sesión"><a href=""><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+</header>
+<section>
+  
+</section>
+
+<footer class="footer" style="background-color:#D55313 !important;">  
+  <br>   
+  <div class="container">         
+    <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright"> Universidad Nacional Federico Villarreal - Ingeniería de Sistemas <br> &copy; 2018 Todos los derechos reservados | KIAC DEVELOPERS </p>    
+  </div>
+  <br>
+</footer>
+
+
+{% endblock %}
+

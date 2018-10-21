@@ -3,6 +3,11 @@ login:
     type:     annotation
     #prefix:   /
 
+principal:
+    path:     /principal
+    defaults: { _controller: LoginBundle:Default:dashboard }
+
+
 #login:
 #    resource: "@AccesoBundle/Resources/config/routing.yml"
 #    prefix:   /
