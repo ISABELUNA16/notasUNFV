@@ -28,7 +28,7 @@ class NotasController extends Controller
         //echo __DIR__.'\..\..\..\Images\notas.png';
         //$file = $form['attachment']->getData();
         //$file->move($directory, $someNewFilename);
-
+        //putenv('GOOGLE_APPLICATION_CREDENTIALS=/c/xampp/htdocs/exampleSymfony/credenciales.json');
         # instantiates a client
         $imageAnnotator = new ImageAnnotatorClient();
         # the name of the image file to annotate
@@ -99,6 +99,9 @@ class NotasController extends Controller
         var_dump($array1);
 
         $imageAnnotator->close();
+
+        /*$query = $em->createQuery('SELECT u FROM MyProject\Model\User u WHERE u.age > 20');
+        $users = $query->getResult();*/
 
         # performs label detection on the image file
         //$response = $imageAnnotator->labelDetection($image);
