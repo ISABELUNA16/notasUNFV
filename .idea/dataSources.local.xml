@@ -5,5 +5,9 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="SQLITE" exact-version="0.0" />
       <auth-required>false</auth-required>
     </data-source>
+    <data-source name="sqlite_notes [2]" uuid="82fcda50-b8a7-4175-bac1-744f409abaff">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="SQLITE" exact-version="0.0" />
+      <auth-required>false</auth-required>
+    </data-source>
   </component>
 </project>

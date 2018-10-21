@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <img src={{ asset('assets/images/nota1.png') }}>
+    <img src={{ asset('assets/images/nota2.png') }}>
     <table class="table">
         <thead>
         <th scope = "col">Id</th>
         <th scope = "col">Créditos</th>
-        <th scope = "col">Asignatura</th>
+        <!--<th scope = "col">Asignatura</th>-->
         <th scope = "col">Calificación</td>
         </thead>
         <tbody>
@@ -14,7 +14,7 @@
             <tr>
                 <th scope="row">{{ course[0] }}</th>
                 <td >{{ course[1] }}</td>
-                <td>{{ course[2] }}</td>
+                <!--<td>{{ course[2] }}</td>-->
                 <td>{{ course[3] }}</td>
             </tr>
         {% endfor %}

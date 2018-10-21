@@ -32,7 +32,7 @@ class NotasController extends Controller
         # instantiates a client
         $imageAnnotator = new ImageAnnotatorClient();
         # the name of the image file to annotate
-        $fileName = __DIR__ . '\..\..\..\web\assets\images\nota1.png';
+        $fileName = __DIR__ . '\..\..\..\web\assets\images\nota2.png';
 
         # prepare the image to be annotated
         $image = file_get_contents($fileName);
@@ -42,7 +42,7 @@ class NotasController extends Controller
 
         //printf('%d texts found:' . PHP_EOL, count($texts));
 
-        $courses = array("3A0014", "8B0135", "7C0080", "7B0192", "7A0559", "3B0111");
+        $courses = array("3A0014", "8B0135", "7C0080", "7B0192", "7A0559", "3B0111", "3B0166", "8F0123", "8E0039", "8E0035", "8B0073", "5B0110");
 
         $i = 0;
         $array2 = array();
@@ -53,7 +53,6 @@ class NotasController extends Controller
         $word = "";
         $array1 = array();
 
-        var_dump("Hola");
         foreach ($texts as $text) {
 
             $lastword = $word;
@@ -87,8 +86,6 @@ class NotasController extends Controller
 
 
                         $array2[] = $word[0].$word[1];
-                        var_dump("later");
-                        var_dump($code);
 
                     }
                 //}
@@ -96,7 +93,6 @@ class NotasController extends Controller
 
         }
 
-        var_dump($array1);
 
         $imageAnnotator->close();
 
@@ -121,11 +117,11 @@ class NotasController extends Controller
             $Course = array();
             $Course[] = $i + 1;
             $Course[] = $array1[$i];
-            $Course[] = $array2[$i];
+            $Course[] = 0;
 
             //var_dump($array1[$i]);
             //var_dump($array2[$i]);
-            $Course[] = 0;
+            $Course[] = $array2[$i];
             $Courses[] = $Course;
         }
 
