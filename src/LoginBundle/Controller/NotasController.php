@@ -42,7 +42,7 @@ class NotasController extends Controller
 
         //printf('%d texts found:' . PHP_EOL, count($texts));
 
-        $courses[] = ["3A0014", "8B0135", "7C0080", "3B0111"];
+        $courses = array("3A0014", "8B0135", "7C0080", "7B0192", "7A0559", "3B0111");
 
         $i = 0;
         $array2 = array();
@@ -52,6 +52,8 @@ class NotasController extends Controller
         $lastword = "";
         $word = "";
         $array1 = array();
+
+        var_dump("Hola");
         foreach ($texts as $text) {
 
             $lastword = $word;
@@ -61,36 +63,40 @@ class NotasController extends Controller
             $found = 0;
             foreach ($courses as $course) {
                 //if (strstr($string, $url)) { // mine version
-                if ($word == $course) { // Yoshi version
+                //var_dump($course[0]. $word);
+                if (strcmp($course, $word) == 0) { // Yoshi version
+                    //var_dump($word);
                     $found = 1;
                     break;
                 }
                 $j = $j + 1;
             }
 
+            //var_dump($word);
+
             if($found){
                 $code = $word;
-                var_dump($code);
+                $array1[] = $code;
             }
             else{
-                if($code != ""){
-                    if($lastword[0] == "-"){
-                        var_dump("word");
-                        var_dump($word);
+                //if($code != ""){
 
-                        if(is_numeric($word)){
+                    //var_dump("word");
+                    //var_dump($word);
+                    if(is_numeric($lastword) && strlen($lastword) < 3 && is_numeric($word[0]) && is_numeric($word[1])){
 
-                            $array1[] = $code;
-                            $array2[] = $word;
 
-                        }
+                        $array2[] = $word[0].$word[1];
+                        var_dump("later");
+                        var_dump($code);
+
                     }
-                }
+                //}
             }
 
         }
 
-        //var_dump($array);
+        var_dump($array1);
 
         $imageAnnotator->close();
 
@@ -111,11 +117,14 @@ class NotasController extends Controller
         //$array = array( array("3.0", "GESTION DE CONOCIMIENTO", "14"), array("1.0", "DEPORTE Y RECREACIÓN", "16"), array("3.0", "DESARROLLO DE TESIS", "12"), array("3.0", "SISTEMAS DISTRIBUIDOS", "15"), array("2.0", "DERECHO INFORMATICO", "17"), array("3.0", "AUDITORIA Y CONTROL DE TECNOLOGÍA INFORMÁTICA", "13"), array("3.0", "CALIDAD Y PRUEBA DE SOFTWARE", "14"), array("3.0", "ARQUITECTURA EMPRESARIAL", "14"));
 
         $Courses = array();
-        for($i = 0; $i < count($array1); $i++){
+        for($i = 0; $i < count($array2); $i++){
             $Course = array();
             $Course[] = $i + 1;
             $Course[] = $array1[$i];
             $Course[] = $array2[$i];
+
+            //var_dump($array1[$i]);
+            //var_dump($array2[$i]);
             $Course[] = 0;
             $Courses[] = $Course;
         }
