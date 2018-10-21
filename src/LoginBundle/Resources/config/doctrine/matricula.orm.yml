@@ -1,0 +1,33 @@
+LoginBundle\Entity\matricula:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\matriculaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codMatricula:
+            type: integer
+            column: cod_matricula
+        codModalidad:
+            type: integer
+            column: cod_modalidad
+        codCarrera:
+            type: integer
+            column: cod_carrera
+        codAlumno:
+            type: integer
+            column: cod_alumno
+        codPeriodo:
+            type: integer
+            column: cod_periodo
+        matFecharegistro:
+            type: datetime
+            column: mat_fecharegistro
+        matEstado:
+            type: integer
+            column: mat_estado
+    lifecycleCallbacks: {  }

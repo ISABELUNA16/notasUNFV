@@ -1,0 +1,32 @@
+login_homepage:
+    path:     /
+    defaults: { _controller: AccesoBundle:Default:index }
+
+#login_usuarioPrincipal:
+#    path:     /usuarioPrincipal
+#    defaults: { _controller: LoginBundle:Default:usuarioPrincipal }
+
+#login_administtradorPrincipal:
+#    path:     /administradorPrincipal
+#    defaults: { _controller: LoginBundle:Default:administradorPrincipal }
+
+#login_reportes:
+#    path:     /reportes
+#    defaults: { _controller: LoginBundle:Default:reportes }
+
+#login_atencion:
+#    path:     /atencion
+#    defaults: { _controller: LoginBundle:Default:atencion }
+  
+#login_tecnicoPrincipal:
+#    path:     /tecnicoPrincipal
+#    defaults: { _controller: LoginBundle:Default:tecnicoPrincipal }
+
+#login_historial:
+#    path:     /historial
+#    defaults: { _controller: LoginBundle:Default:historial }
+
+#login_atencionTecnico:
+#    path:     /atencionTecnico
+#    defaults: { _controller: LoginBundle:Default:atencionTecnico }
+

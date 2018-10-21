@@ -1,0 +1,28 @@
+LoginBundle\Entity\periodo:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\periodoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codPeriodo:
+            type: integer
+            column: cod_periodo
+        periodoDescripcion:
+            type: string
+            length: '300'
+            column: periodo_descripcion
+        periodoFechainicio:
+            type: datetime
+            column: periodo_fechainicio
+        periodoFechafin:
+            type: datetime
+            column: periodo_fechafin
+        periodoEstado:
+            type: integer
+            column: periodo_estado
+    lifecycleCallbacks: {  }

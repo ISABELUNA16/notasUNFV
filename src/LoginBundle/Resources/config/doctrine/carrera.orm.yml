@@ -1,0 +1,29 @@
+LoginBundle\Entity\carrera:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\carreraRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codCarrera:
+            type: integer
+            column: cod_carrera
+        codFacultad:
+            type: integer
+            column: cod_facultad
+        carreraDescripcion:
+            type: string
+            length: 255
+            column: carrera_descripcion
+        carreraSemestres:
+            type: string
+            length: 255
+            column: carrera_semestres
+        carreraEstado:
+            type: integer
+            column: carrera_estado
+    lifecycleCallbacks: {  }

@@ -1,0 +1,38 @@
+LoginBundle\Entity\nota:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\notaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codMatricula:
+            type: integer
+            column: cod_matricula
+        codCurso:
+            type: integer
+            column: cod_curso
+        notasTareas:
+            type: decimal
+            precision: '8'
+            scale: '2'
+            column: notas_tareas
+        notasExamenParcial:
+            type: decimal
+            precision: '8'
+            scale: '2'
+            column: notas_examen_parcial
+        notasExamenFinal:
+            type: decimal
+            precision: '8'
+            scale: '2'
+            column: notas_examen_final
+        notaPromediofinal:
+            type: decimal
+            precision: '8'
+            scale: '2'
+            column: nota_promediofinal
+    lifecycleCallbacks: {  }

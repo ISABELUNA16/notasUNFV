@@ -1,0 +1,23 @@
+LoginBundle\Entity\facultad:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\facultadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codFacultad:
+            type: integer
+            column: cod_facultad
+        facultadDescripcion:
+            type: string
+            length: '300'
+            column: facultad_descripcion
+        facultadSiglas:
+            type: string
+            length: 255
+            column: facultad_siglas
+    lifecycleCallbacks: {  }

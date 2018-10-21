@@ -1,0 +1,106 @@
+{% extends '::base.html.twig' %}
+{% block title %} HISTORIAL DE NOTAS {% endblock %}
+{% block body %}
+
+<header >
+ 	<nav style="background:black; border-color:black" class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                                                          
+            </div>
+        </div>
+    </nav>
+</header>
+					
+<section style="background:#E6E6E6;">
+	<div id="" class="proceso">
+		<div class="container-card col-xs-10 col-sm-8 col-md-4 col-ld-3" style="background-color: transparent;">
+			<div class="card" style="background-color:white; margin-top:60px; margin-bottom: 100px; padding: 20px;">
+			  	<center><img src="{{ asset('assets/images/icono.PNG') }}" class="img-responsive"  style="width:70px;" alt="logoSCT" />	</center>
+				<h1 class="title-card text-center" style="color: #08298A"> HISTORIAL DE NOTAS </h1>
+				<hr>
+				<div id="alert-info" class="alert alert-warning alert-dismissible" role="alert">
+					<button id="btn-close-alert-info" class="close"><span aria-hidden="true">&times;</span></button>
+					<strong>Acceso sólo para personal autorizado</strong>
+					<p>Ingrese al sistema con sus credenciales asignadas.</p>
+				</div>
+				<div id="alerta-error" class="alert alert-danger collapse text-center"></div>
+
+				<form action="" method="POST">
+					<input type="text" class="form-control" placeholder="Usuario" id="input-usuario" name="input-usuario"required autofocus>
+	                <input type="password" class="form-control" placeholder="Contraseña" id="input-contrasena" required>
+	                <br>
+	               <button class="btn btn-lg btn-primary btn-block" id="btn-login" name="btn-login" type="button">
+                    Iniciar sesión</button>
+		            <label class="checkbox pull-left" style="margin-left: 20px;">
+	                    <input type="checkbox" value="remember-me" >
+	                    Recordar 
+	                </label>
+                	<br>
+                	<a href="#" class="pull-right need-help">Necesitas ayuda? </a><span class="clearfix"></span>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="footer" style="background-color:black;">  
+	<br>   
+	<div class="container">         
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">&copy; 2018 Todos los derechos reservados | Sistema de Control Técnico UNFV</p>    
+	</div>
+	<br> 
+</footer>
+
+{% endblock %}
+{% block javascripts %}
+	<!-- scripts -->
+	<script src="{{asset('assets/vendor/jquery/dist/jquery.js')}}"></script>
+	<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.js')}}"></script>
+
+	<script type="text/javascript">
+
+			$('#btn-login').click(function(){
+
+				var usuario = $("#input-usuario").val();
+				console.log(usuario);
+
+				if ($("#input-usuario").val() != '' && $("#input-contrasena").val() != '') {
+					if ($("#input-usuario").val() == "isabel") {
+						
+						window.location.href = "{{url('login_usuarioPrincipal')}}";
+				
+					}else if($("#input-usuario").val() == 'kevin'){
+						window.location.href = "{{url('login_administtradorPrincipal')}}";
+						
+					}else if($("#input-usuario").val() == 'adam'){
+						window.location.href = "{{url('login_tecnicoPrincipal')}}";
+					}else{
+						showAlertMessage('#alerta-error', "Credenciales Incorrectas")
+					}
+				} else{
+					showAlertMessage('#alerta-error', "Ingrese todos los campos solicitados")
+				}
+			});
+
+		/*Muestra mensaje de alerta*/
+		function showAlertMessage(alert, mensaje){
+			$(alert).text(mensaje).show('fade');
+			setTimeout(function(){
+				hideAlertMessage(alert);	
+			}, 3000);
+		}
+
+		/*Oculta mensaje de alerta*/
+		function hideAlertMessage(alert){
+			$(alert).hide('fade');		
+		}
+
+	</script>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+LoginBundle\Entity\modalidad:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\modalidadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codModalidad:
+            type: integer
+            column: cod_modalidad
+        modalidadDescripcion:
+            type: string
+            length: '300'
+            column: modalidad_descripcion
+        modalidadEstado:
+            type: integer
+            column: modalidad_estado
+    lifecycleCallbacks: {  }

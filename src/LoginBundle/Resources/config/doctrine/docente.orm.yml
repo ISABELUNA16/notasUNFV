@@ -1,0 +1,30 @@
+LoginBundle\Entity\docente:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\docenteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codDocente:
+            type: integer
+            column: cod_docente
+        docenteApepat:
+            type: string
+            length: '300'
+            column: docente_apepat
+        docenteApemat:
+            type: string
+            length: '300'
+            column: docente_apemat
+        docenteNombre:
+            type: string
+            length: 255
+            column: docente_nombre
+        docenteTelefono:
+            type: integer
+            column: docente_telefono
+    lifecycleCallbacks: {  }

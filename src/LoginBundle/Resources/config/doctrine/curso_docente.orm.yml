@@ -1,0 +1,24 @@
+LoginBundle\Entity\curso_docente:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\curso_docenteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codDocente:
+            type: integer
+            column: cod_docente
+        codCurso:
+            type: integer
+            column: cod_curso
+        codPeriodo:
+            type: integer
+            column: cod_periodo
+        cursodocenteEstado:
+            type: integer
+            column: cursodocente_estado
+    lifecycleCallbacks: {  }

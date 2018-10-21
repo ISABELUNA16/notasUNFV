@@ -1,0 +1,31 @@
+LoginBundle\Entity\curso:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\cursoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codCurso:
+            type: integer
+            column: cod_curso
+        codCarrera:
+            type: integer
+            column: cod_carrera
+        cursoDescripcion:
+            type: string
+            length: '500'
+            column: curso_descripcion
+        cursoCreditos:
+            type: integer
+            column: curso_creditos
+        cursoHoraslectivas:
+            type: float
+            column: curso_horaslectivas
+        cursoEstado:
+            type: integer
+            column: curso_estado
+    lifecycleCallbacks: {  }

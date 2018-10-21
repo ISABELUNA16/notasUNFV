@@ -1,0 +1,35 @@
+LoginBundle\Entity\Alumno:
+    type: entity
+    table: null
+    repositoryClass: LoginBundle\Repository\AlumnoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codAlumno:
+            type: integer
+            column: cod_alumno
+        alumApepat:
+            type: string
+            length: 255
+            column: alum_apepat
+        alumApemat:
+            type: string
+            length: 255
+            column: alum_apemat
+        alumNom:
+            type: string
+            length: 255
+            column: alum_nom
+        alumDireccion:
+            type: string
+            length: 255
+            column: alum_direccion
+        alumTelefono:
+            type: string
+            length: 255
+            column: alum_telefono
+    lifecycleCallbacks: {  }

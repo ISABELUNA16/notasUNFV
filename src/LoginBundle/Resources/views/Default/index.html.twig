@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+{% block title %} HISTORIAL DE NOTAS {% endblock %}
+{% block body %}
+
+<header >
+ 	<nav style="background:black; border-color:black" class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                                                          
+            </div>
+        </div>
+    </nav>
+</header>
+					
+<section style="background:#E6E6E6;">
+	<div id="" class="proceso" >
+		<div class="container-card col-xs-10 col-sm-8 col-md-4 col-ld-3" style="background-color: transparent;">
+			<div class="card" style="background-color:#BDBDBD ; margin-top:60px; margin-bottom: 100px; padding: 20px;">
+			  	<left><img src="{{ asset('assets/images/logo.svg') }}" class="img-responsive"  style="width:50%;" alt="logoSCT" />	</left>
+			  	<hr>
+				<h1 class="title-card text-center" style="color: #0B3861"> HISTORIAL ACADÉMICO </h1>
+
+				<form action="" method="POST">
+					<div style="padding:30px">
+						<input type="text" class="form-control" placeholder="Usuario" id="input-usuario" name="input-usuario"required autofocus><br>
+		                <input type="password" class="form-control" placeholder="Contraseña" id="input-contrasena" required>
+		                <br>
+		               <button class="btn btn-lg btn-primary btn-block" id="btn-login" name="btn-login" type="button">
+	                    Iniciar sesión</button>
+			            <label class="checkbox pull-left" style="margin-left: 20px;">
+		                    <input type="checkbox" value="remember-me" >
+		                    Recordar 
+		                </label>
+	                	<br>
+	                	<a href="#" class="pull-right need-help">Plataforma virtual</a><span class="clearfix"></span>
+					</div>					
+				</form>
+				<br>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="footer" style="background-color:#D55313 !important;">  
+	<br>   
+	<div class="container">         
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright"> Universidad Nacional Federico Villarreal - Ingeniería de Sistemas <br> &copy; 2018 Todos los derechos reservados | KIAC DEVELOPERS </p>    
+	</div>
+	<br>
+</footer>
+
+{% endblock %}
