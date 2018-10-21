@@ -15,10 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 # imports the Google Cloud client library
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
-class CourseTwig {
-    public
-}
-
 class NotasController extends Controller
 {
     /**
@@ -49,13 +45,13 @@ class NotasController extends Controller
         $courses[] = ["3A0014", "8B0135", "7C0080", "3B0111"];
 
         $i = 0;
-        $arrayi = array();
+        $array2 = array();
         $count = 0;
         $fullword = "";
         $code = "";
         $lastword = "";
         $word = "";
-        $array = array();
+        $array1 = array();
         foreach ($texts as $text) {
 
             $lastword = $word;
@@ -81,13 +77,12 @@ class NotasController extends Controller
                     if($lastword[0] == "-"){
                         var_dump("word");
                         var_dump($word);
-                        exit;
+
                         if(is_numeric($word)){
 
-                            $arrayi[] = $code;
-                            $arrayi[] = $word;
-                            $array[] = $arrayi;
-                            $arrayi = array();
+                            $array1[] = $code;
+                            $array2[] = $word;
+
                         }
                     }
                 }
@@ -116,11 +111,11 @@ class NotasController extends Controller
         //$array = array( array("3.0", "GESTION DE CONOCIMIENTO", "14"), array("1.0", "DEPORTE Y RECREACIÓN", "16"), array("3.0", "DESARROLLO DE TESIS", "12"), array("3.0", "SISTEMAS DISTRIBUIDOS", "15"), array("2.0", "DERECHO INFORMATICO", "17"), array("3.0", "AUDITORIA Y CONTROL DE TECNOLOGÍA INFORMÁTICA", "13"), array("3.0", "CALIDAD Y PRUEBA DE SOFTWARE", "14"), array("3.0", "ARQUITECTURA EMPRESARIAL", "14"));
 
         $Courses = array();
-        for($i = 0; $i < 8; $i++){
+        for($i = 0; $i < count($array1); $i++){
             $Course = array();
             $Course[] = $i + 1;
-            //$Course[] = $array[$i][0];
-            //$Course[] = $array[$i][1];
+            $Course[] = $array1[$i];
+            $Course[] = $array2[$i];
             $Course[] = 0;
             $Courses[] = $Course;
         }
